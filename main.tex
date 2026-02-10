@@ -1,0 +1,119 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs} 
+\usepackage{float}
+ \usepackage{longtable}
+ \usepackage{ragged2e}
+ \usepackage{array}
+
+\title{Systematic Review: Efficiency and Optimization in Large Language Models (2023-2025)}
+\author{Mohosana Maymuna And Zawad}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+The rapid evolution of Large Language Models (LLMs) has led to significant computational challenges. This review analyzes key advancements in parameter-efficient fine-tuning (PEFT) and domain-specific applications.
+
+\section{Comparative Analysis}
+The following table summarizes the key technical contributions from our dataset regarding model efficiency and parameter-efficient fine-tuning (PEFT).
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}lp{3cm}p{4cm}p{4cm}@{}}
+\toprule
+\textbf{Author (Year)} & \textbf{Methodology}& \textbf{Key Improvement}  &\textbf{Limitations}\\ \midrule
+Shen et al. \cite{shen2025optimizing} & Quantization-aware PEFT & Large layers stay accurate even when memory is cut & High info loss in very small models\\
+Prottasha et al. \cite{jahan2024parameter} & Semantic Tuning (SK) & Using real words makes prompts 46\% more effective & Requires manual word selection\\
+Jung et al. \cite{jung2025prefix} & Residual Gating & Keeps training steady and prevents prefix errors & Slows down the initial setup\\
+Zhu et al. \cite{zhu2024zerof} & ZeROf-Offload & Borrowing computer brain power (CPU) to train massive models & Needs high-end GPUs to reach top speed \\ 
+Xie et al. \cite{xie2025loco} & Low-bit Adaptors & 14\%--40\% faster training on weak connections & Adds a small (10\%) memory tax\\ \bottomrule
+\end{tabular}
+\caption{Comparison of LLM Optimization Methods}
+\end{table}
+
+\section{Domain-Specific Applications}
+The following table highlights how optimized LLMs are being integrated into specialized sectors, from healthcare to legal retrieval, based on empirical performance metrics.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}lp{3cm}p{4cm}p{4cm}@{}}
+\toprule
+\textbf{Author (Year)} & \textbf{Target Domain} & \textbf{Application Outcome} & \textbf{Key Insight} \\ \midrule
+Yasaka et al. \cite{yasaka2025classification} & Healthcare & 0.988 accuracy; 17.5--19.9x faster than humans & Fine-tuned models significantly improve radiology report sorting \\
+López et al. \cite{lopez2024inter} & Software Eng. & Identifies code duplication across pre-training sets & Inter-dataset leakage causes inflated performance metrics \\
+Pornprasit et al. \cite{pornprasit2024fine} & Software Eng. & 73.17\%--74.23\% higher EM scores than baselines & Fine-tuning GPT-3.5 outperforms zero-shot variants by 46\%+ \\
+Mentzinger et al. \cite{mentzingen2025effectiveness} & Legal & High retrieval with ADA model embeddings & Strategic use of summarization creates cost-effective legal systems \\
+Huang et al. \cite{huang2025orlm} & Operations Research & OR-Instruct creates 30,000 training examples & 7B-scale models (Mistral/Llama) achieve state-of-the-art optimization \\ \bottomrule
+\end{tabular}
+\caption{Impact of LLM Adaptations Across Specialized Industries}
+\end{table}
+\section{Reliability, Safety, and Ethics}
+Even though models are becoming faster (Pillar 1) and more useful in specialized jobs (Pillar 2), we must ensure they are safe and do not spread misinformation (Pillar 3). Table 3 evaluates how researchers are building "shields" and "X-ray vision" for these systems.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}lp{3cm}p{4cm}p{4cm}@{}}
+\toprule
+\textbf{Author (Year)} & \textbf{Safety Theme} & \textbf{Humanized Outcome} & \textbf{Key Limitation} \\ \midrule
+Banik et al. \cite{banik2024systematic} & Reliability & Robot is getting better at "telling the truth" and being honest & Struggles with real-time facts and open-source flexibility \\
+Ye et al. \cite{ye2025lora} & Robustness & Wearing a "shield" so tricky words don't confuse the robot & Higher training cost to build the defense \\
+Lee et al. \cite{lee2024enhancing} & Trust & A "magnifying glass" that is 10\% better at spotting robot-writing & Gets 2\% harder to detect as sentences get longer \\
+Zhao et al. \cite{zhao2024explainability} & Transparency & "X-ray vision" to see the "why" inside the "black box" brain & Scaling these explanations for massive models is very hard \\
+Singh et al. \cite{singh2023augmenting} & Interpretability & Turns complex logic into a simple "picture book" story & Some tiny details are lost during the simplification \\ \bottomrule
+\end{tabular}
+\caption{Analysis of LLM Reliability and Ethical Guardrails}
+\end{table}
+
+\newpage
+\appendix
+\section{List of Remaining Research Papers}
+\label{appa:remaining_papers}
+
+This appendix lists the remaining 23 research papers included in this systematic review, summarizing their primary objectives.
+
+\begin{longtable}{|p{0.20\textwidth}|p{0.08\textwidth}|p{0.62\textwidth}|}
+\hline
+\textbf{Author} & \textbf{Year} & \textbf{Main Goal} \\ \hline
+\endfirsthead
+\multicolumn{3}{c}{{\bfseries Table \thetable\ (continued)}} \\ \hline
+\textbf{Author} & \textbf{Year} & \textbf{Main Goal} \\ \hline
+\endhead
+\hline \multicolumn{3}{|r|}{{Continued on next page}} \\ \hline
+\endfoot
+\hline
+\endlastfoot
+
+Sarkhel R et al. & 2023 & Developed the LEAST algorithm for label-efficient information extraction from semi-structured web pages. \\ \hline
+Khoboko PW et al. & 2025 & Optimized translation for low-resource African languages using QLoRA and custom prompt engineering. \\ \hline
+Gogineni K et al. & 2025 & Analyzed power-efficient LLM fine-tuning strategies on single-GPU systems using power capping. \\ \hline
+Roumeliotis KI et al. & 2025 & Evaluated GPT-4o multimodal performance in computer vision via progressive fine-tuning. \\ \hline
+Lu W et al. & 2025 & Studied domain adaptation and model merging (SLERP) for materials science applications. \\ \hline
+Jung H et al. & 2024 & Proposed PCRL (Prompt Compression with Reinforcement Learning) to reduce token counts in LLM prompts. \\ \hline
+Budakoglu G et al. & 2025 & Compared RAG, fine-tuning, and hybrid architectures for performance in specific NLP tasks. \\ \hline
+Qiu X et al. & 2024 & Introduced Chain-of-LoRA to enhance instruction fine-tuning performance on diverse datasets. \\ \hline
+Cho M et al. & 2024 & Developed eDKM for efficient train-time weight clustering and LLM compression. \\ \hline
+Chen Z et al. & 2024 & Introduced the PreparedLLM framework for domain-specific pre-pretraining in geoscience. \\ \hline
+Rangan K et al. & 2024 & Enhanced RAG systems for social services using QLoRA and Quantized Influence Measures. \\ \hline
+Schmirler R et al. & 2024 & Benchmarked parameter-efficient fine-tuning (PEFT) for protein language model predictions. \\ \hline
+Kanemaru N et al. & 2025 & Fine-tuned BERT-based models for automated CT protocol assignment in radiology. \\ \hline
+Alahmari SS et al. & 2024 & Evaluated the repeatability and stability of LLM fine-tuning using the QLoRA method. \\ \hline
+Pan H et al. & 2024 & Built a specialized LLM for petroleum engineering and reservoir performance analysis. \\ \hline
+Latif E et al. & 2024 & Applied fine-tuned GPT-3.5 for automated scoring of student science assessments. \\ \hline
+Huang C et al. & 2025 & Proposed OR-Instruct for automated optimization modeling and solver code generation. \\ \hline
+Tolegen G et al. & 2024 & Used contrastive learning for morphological disambiguation in low-resource languages. \\ \hline
+Ge S et al. & 2025 & Integrated LLM agents with TRIZ methods using Chain-of-Thought for conceptual design. \\ \hline
+De Haan T et al. & 2025 & Developed AstroSage-Llama-3.1-8B, a specialized model for astronomy and astrophysics. \\ \hline
+Cheng Y et al. & 2025 & Designed the GAIA model for advanced power dispatch and grid operation management. \\ \hline
+Sarkhel R et al. & 2023 & Explored self-training for label-efficient extraction from semi-structured web layouts. \\ \hline
+Banik D et al. & 2024 & Conducted architectural analysis of ChatGPT progression focusing on RLHF and scaling. \\ \hline
+
+\end{longtable}
+
+
+\newpage
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}
